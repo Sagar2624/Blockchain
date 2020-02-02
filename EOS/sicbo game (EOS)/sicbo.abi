@@ -1,0 +1,119 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT ",
+    "version": "eosio::abi/1.1",
+    "types": [],
+    "structs": [
+        {
+            "name": "betdetails",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user",
+                    "type": "name"
+                },
+                {
+                    "name": "winnerName",
+                    "type": "string"
+                },
+                {
+                    "name": "transactionId",
+                    "type": "string"
+                },
+                {
+                    "name": "winnerAddress",
+                    "type": "string"
+                },
+                {
+                    "name": "winnerAmount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "erase",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "player_details",
+            "base": "",
+            "fields": [
+                {
+                    "name": "key",
+                    "type": "name"
+                },
+                {
+                    "name": "winnerName",
+                    "type": "string"
+                },
+                {
+                    "name": "transactionId",
+                    "type": "string"
+                },
+                {
+                    "name": "winnerAddress",
+                    "type": "string"
+                },
+                {
+                    "name": "winnerAmount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "resultdetail",
+            "base": "",
+            "fields": [
+                {
+                    "name": "expectedResult",
+                    "type": "string"
+                },
+                {
+                    "name": "winningResult",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "betdetails",
+            "type": "betdetails",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "erase",
+            "type": "erase",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "resultdetail",
+            "type": "resultdetail",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "winner",
+            "type": "player_details",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": []
+}
