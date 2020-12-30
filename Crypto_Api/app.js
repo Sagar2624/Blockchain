@@ -22,9 +22,8 @@ app.use(cookieParser());
 let tron = require('./routes/tronroutes');
 let ripple = require('./routes/rippleroutes');
 let block = require('./routes/blockroutes');
-app.use('/', tron);
-
 app.use('/ripple', ripple);
+app.use('/tron', tron);
 app.use('/block', block);
 
 app.listen(3000, () => console.log('App running on port 3000'));   // START THE EXPRESS SERVER ON THE PORT 3000

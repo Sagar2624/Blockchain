@@ -1,10 +1,4 @@
 
-//*******************************************************************************************************************//
-// RevolutionAI is redefined revolution for blockchain.                                                              //
-// https://twitter.com/revolutions_ai                                                                                //
-// https://www.facebook.com/ai.revolutions/                                                                          //
-// https://www.linkedin.com/company/revolutions-ai/                                                                  //
-//*******************************************************************************************************************//
 
 pragma solidity ^0.5.0;
 /**

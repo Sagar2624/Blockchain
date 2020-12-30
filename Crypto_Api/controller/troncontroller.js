@@ -5,13 +5,13 @@ const https = require('https');
 // This provider is optional, you can just use a url for the nodes instead
 const HttpProvider = TronWeb.providers.HttpProvider;
 // main net
-// const fullNode = new HttpProvider('https://api.trongrid.io'); // Full node http endpoint
-// const solidityNode = new HttpProvider('https://api.trongrid.io'); // Solidity node http endpoint
-// const eventServer = new HttpProvider('https://api.trongrid.io');
+const fullNode = new HttpProvider('https://api.trongrid.io'); // Full node http endpoint
+const solidityNode = new HttpProvider('https://api.trongrid.io'); // Solidity node http endpoint
+const eventServer = new HttpProvider('https://api.trongrid.io');
 //test net
-var fullNode = new HttpProvider('https://api.shasta.trongrid.io'); // Full node http endpoint
-var solidityNode = new HttpProvider('https://api.shasta.trongrid.io'); // Solidity node http endpoint
-var eventServer = new HttpProvider('https://api.shasta.trongrid.io'); // Contract events http endpoint
+// var fullNode = new HttpProvider('https://api.shasta.trongrid.io'); // Full node http endpoint
+// var solidityNode = new HttpProvider('https://api.shasta.trongrid.io'); // Solidity node http endpoint
+// var eventServer = new HttpProvider('https://api.shasta.trongrid.io'); // Contract events http endpoint
 
 module.exports = {
     
@@ -407,7 +407,6 @@ module.exports = {
     },
     
     sendTransaction: async (req, res) => {
-       // console.log(req.body)
         if (req.body.privateKey) {
             const tronWeb = new TronWeb(
                 fullNode,
@@ -419,9 +418,7 @@ module.exports = {
             if (req.body.address && req.body.amount) {
                 console.log(req.body)
                 await  tronWeb.trx.sendTransaction(req.body.address, req.body.amount * 1000000,req.body.privateKey).then(transaction => {
-                   // res.status(200)
-                   // res.send(transaction);
-                   res.status(200).send(transaction);
+                    res.send(transaction);
                 }).catch(err => {
                     res.status(400);
                     res.send({"message": err})

@@ -179,15 +179,11 @@ module.exports = {
 
     //To get list of transaction
     transactionList: async(req,res) => {
-        console.log(req.query);
-
         try {
             //var vr="";
             var query = "https://data.ripple.com/v2/accounts/"+req.query.address+"/transactions?type=Payment&result=tesSUCCESS";
-            console.log(req.query.address);
             request(query,async (err,result)=>
             {
-
                     if(err){
                        console.log(err)
                         throw err;

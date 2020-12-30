@@ -1,11 +1,6 @@
 
 pragma solidity ^0.5.0;
 
-//********************************************************************************************************************************************//
-// The Yubi.Exchange is a Non-bank Financial Institution providing Escrow, Proof of Funds, and e-Procurement Services for many industries.    //
-// The Yubi Stablecoin and the Yubi.Exchange offer a progressive platform for eliminating cross-border exchange rates and related fees.       //
-//********************************************************************************************************************************************//
-
 library SafeMath {
     function mul(uint256 a, uint256 b) internal pure returns (uint256) {
         if (a == 0) {
