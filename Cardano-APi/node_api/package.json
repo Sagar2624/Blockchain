@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@swyftx/api-crypto-address-validator": "^1.13.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bip39": "^3.0.2",
     "bitcoinjs-message": "^2.1.1",
     "bitcore-message": "^1.0.4",
