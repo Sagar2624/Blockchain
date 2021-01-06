@@ -1,14 +1,6 @@
 pragma solidity ^0.4.24;
 
  /**
- * Token Smart contract for RYZ token 
- * Token Name: RYZ
- * Token Symbol: RYZ
- * Initial Supply : 1000000000000
- * Standard: ERC20
- */
-
- /**
  * @title SafeMath
  * @dev   Unsigned math operations with safety checks that revert on error
  */
@@ -380,37 +372,6 @@ interface IERC20 {
   // Mappinng for Blacklisted bitAddresses
   mapping (string => bool) private _bitAddresses;
   
-  // Mapping to track purchased token
-  mapping(address=>uint256) private _myPurchasedTokens;
-  
-  // mapping for open order tRX
-  mapping(address=>uint256) private _openOrderTrxAmountByAddress;
-  
-  // mapping for trx deposited by user 
-  mapping(address=>uint256) private _trxDepositedByUser;
-  
-  // mapping for User address who claimed BTC
-  mapping(uint256=>address) private _userAddressForClaimBTC;
-  
-  // mapping for keep track of address who claim BTC
-  mapping(uint256=>string) private _claimedBTCAddress;
-  
-  // mapping for raw BTC amount
-  mapping(uint256=>uint256) private _rawBTCAmount;
-  
-  // mapping to keep track of claim amount by BTC
-  mapping(uint256=>uint256) private _claimedAmountByBTC;
-  
-  // mapping to keep track of final withdraw value pof staked token
-  mapping(uint256=>uint256) private _finalWithdrawlStake;
-  
-  // mappimg for claim date for BTC
-  mapping(uint256=>uint256)_dateOfClaimBTC;
-  
-  //variable for id management for claim BTC
-  uint256 private _idClaimBTC;
-
-  // Reward Percentage
   uint256 private _rewardPercentage;
 
   // Penalty Percentage

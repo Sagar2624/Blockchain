@@ -1,22 +1,6 @@
-/**
- *Submitted for verification at Etherscan.io on 2019-12-12
-*/
+
 
 pragma solidity ^0.5.2;
-// ----------------------------------------------------------------------------
-// SynchroBit™ Hybrid Digital Assets Trading Platform Smart Contract
-//
-// Deployed to : 0x6241E4822100Eb51e28B7784636037ed1C657bB9
-// Symbol : SNB
-// Name : SynchroBitcoin
-// Total supply: 1000000000
-// Decimals :18
-//
-// Enjoy.
-//
-// SynchroBit™ Hybrid Digital Assets Trading Platform by SYNCHRONIUM®
-// Compatible with Zero Trading Fee on SynchroBit Hybrid Exchange and integration with WinkPay, PikChat and other SYNCHRONIUM Omni Platforms
-// ----------------------------------------------------------------------------
 
 /**
  * @title ERC20 interface
@@ -345,32 +329,6 @@ contract SynchroBitcoin is IERC20 {
              _approve(from, msg.sender, _allowed[from][msg.sender].sub(value));
              return true;
     }
-
-    /**
-     * @dev Transfer tokens to a secified address (For Only Owner)
-     * @param to The address to transfer to.
-     * @param value The amount to be transferred.
-     * @return Transfer status in true or false
-     */
-    function transferByOwner(address to, uint256 value, uint8 lockingTime) public AllTransfersLockStatus onlyOwner returns (bool) {
-        addLockingTime(to,lockingTime,value);
-        _transfer(msg.sender, to, value);
-        return true;
-    }
-
-    /**
-     * @dev withdraw locked tokens only (For Only Owner)
-     * @param from locked address
-     * @param to address to be transfer tokens
-     * @param value amount of tokens to unlock and transfer
-     * @return transfer status
-     */
-     function transferLockedTokens(address from, address to, uint256 value) external onlyOwner returns (bool){
-        require((_lockedAmount[from] >= value) && (now < time[from]), "Insufficient unlocked balance");
-        require(from != address(0) && to != address(0), "Invalid address");
-        _lockedAmount[from] = _lockedAmount[from] - value;
-        _transfer(from,to,value);
-     }
 
      /**
       * @dev Airdrop function to airdrop tokens. Best works upto 50 addresses in one time. Maximum limit is 200 addresses in one time.
